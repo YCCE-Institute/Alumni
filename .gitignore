@@ -1,0 +1,121 @@
+# --- Global ignores ---
+.DS_Store
+node_modules/
+.env
+*.log
+.idea/
+.vscode/
+.cache/
+
+# --- Web specific ignores ---
+/web/.cache/
+# dependencies
+/web/.pnp
+/web/.pnp.*
+/web/.yarn/*
+!/web/.yarn/patches
+!/web/.yarn/plugins
+!/web/.yarn/releases
+!/web/.yarn/versions
+# testing
+/web/coverage
+# next.js
+/web/.next/
+/web/out/
+# production
+/web/build
+# misc
+/web/*.pem
+# debug
+/web/npm-debug.log*
+/web/yarn-debug.log*
+/web/yarn-error.log*
+/web/.pnpm-debug.log*
+# env files (can opt-in for committing if needed)
+/web/.env*
+# vercel
+/web/.vercel
+# typescript
+/web/*.tsbuildinfo
+/web/next-env.d.ts
+
+# --- Android specific ignores ---
+/android/*.iml
+/android/local.properties
+/android/build
+# Gradle files
+/android/.gradle/
+/android/build/
+# Log/OS Files
+/android/*.log
+# Android Studio generated files and folders
+/android/captures/
+/android/.externalNativeBuild/
+/android/.cxx/
+/android/*.apk
+/android/output.json
+# IntelliJ
+/android/.idea/
+/android/misc.xml
+/android/deploymentTargetDropDown.xml
+/android/render.experimental.xml
+# Keystore files
+/android/*.jks
+/android/*.keystore
+# Google Services (e.g. APIs or Firebase)
+/android/google-services.json
+# Android Profiling
+/android/*.hprof
+
+# --- iOS specific ignores ---
+## Build generated
+/ios/build/
+/ios/DerivedData
+# NB: NIB/XIB files still exist even on Storyboard projects, so we want this
+/ios/*~.nib
+/ios/*.swp
+## Various settings
+/ios/*.pbxuser
+!/ios/default.pbxuser
+/ios/*.mode1v3
+!/ios/default.mode1v3
+/ios/*.mode2v3
+!/ios/default.mode2v3
+/ios/*.perspectivev3
+!/ios/default.perspectivev3
+/ios/xcuserdata
+## Other
+/ios/*.xccheckout
+/ios/*.moved-aside
+/ios/*.xcuserstate
+/ios/*.xcscmblueprint
+/ios/*.xcscheme
+!/ios/*/xcshareddata/xcschemes/*.xcscheme
+/ios/.AppleDouble
+/ios/.LSOverride
+# Icon must end with two \r
+/ios/Icon
+# Thumbnails
+/ios/._*
+# Files that might appear in the root of a volume
+/ios/.DocumentRevisions-V100
+/ios/.fseventsd
+/ios/.Spotlight-V100
+/ios/.TemporaryItems
+/ios/.Trashes
+/ios/.VolumeIcon.icns
+# Directories potentially created on remote AFP share
+/ios/.AppleDB
+/ios/.AppleDesktop
+/ios/Network Trash Folder
+/ios/Temporary Items
+/ios/.apdisk
+########## Objective-C/Swift specific ##########
+/ios/*.hmap
+/ios/*.ipa
+# CocoaPods
+/ios/Carthage/Build
+/ios/*.xcworkspace
+# fastlane
+/ios/fastlane/report.xml
+/ios/fastlane/screenshots
