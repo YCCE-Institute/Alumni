@@ -1,8 +1,18 @@
 package com.suyogbauskar.yccealumni;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -20,5 +30,25 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Map<String, Object> city = new HashMap<>();
+        city.put("name", "New value");
+        city.put("state", "CA");
+        city.put("country", "USA");
+
+        FirebaseFirestore.getInstance().collection("cities").document("LA")
+                .set(city)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(MainActivity.this, "Failure", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

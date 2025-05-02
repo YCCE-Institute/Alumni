@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "758340379060",
+    "project_id": "alumni-staging-da732",
+    "storage_bucket": "alumni-staging-da732.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758340379060:android:cd0c69c146049cbb8092e1",
+        "android_client_info": {
+          "package_name": "com.suyogbauskar.yccealumni.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEKdFS_7mGKgOF6Agwmnam7eRmoPgs26k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

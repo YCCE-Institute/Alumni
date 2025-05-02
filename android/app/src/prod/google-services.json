@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "672056511806",
+    "project_id": "alumni-production-f99bb",
+    "storage_bucket": "alumni-production-f99bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672056511806:android:d988c7048409cb932db06f",
+        "android_client_info": {
+          "package_name": "com.suyogbauskar.yccealumni"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIT9g9kZFPfg8QKdgFMwNVDjbzvOpoPSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

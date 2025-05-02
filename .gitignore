@@ -43,6 +43,7 @@ node_modules/
 /android/*.iml
 /android/local.properties
 /android/build
+/android/app/build
 # Gradle files
 /android/.gradle/
 /android/build/
@@ -118,4 +119,4 @@ node_modules/
 /ios/*.xcworkspace
 # fastlane
 /ios/fastlane/report.xml
-/ios/fastlane/screenshots
+/ios/fastlane/screenshots/android/app/build/generated/**/values.xml
