@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Map<String, Object> city = new HashMap<>();
-        city.put("name", "New value");
-        city.put("state", "CA");
         city.put("country", "USA");
+        city.put("name", "Prod release");
+        city.put("state", "CA");
 
         FirebaseFirestore.getInstance().collection("cities").document("LA")
                 .set(city)
