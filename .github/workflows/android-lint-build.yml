@@ -28,6 +28,9 @@ jobs:
           mkdir -p app/src/dev
           echo "$DATA" | base64 -d > app/src/dev/google-services.json
 
+      - name: Restore Keystore
+        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > release.jks
+
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -67,6 +70,9 @@ jobs:
         run: |
           mkdir -p app/src/prod
           echo "$DATA" | base64 -d > app/src/prod/google-services.json
+
+      - name: Restore Keystore
+        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > release.jks
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
