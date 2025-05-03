@@ -17,6 +17,9 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
       - name: Restore google-services.json (dev)
         env:
           DATA: ${{ secrets.GOOGLE_SERVICES_JSON_DEV }}
@@ -45,6 +48,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
 
       - name: Restore google-services.json (prod)
         env:
