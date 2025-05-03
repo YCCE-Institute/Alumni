@@ -7,6 +7,10 @@ on:
     paths:
       - 'android/**'
 
+defaults:
+  run:
+    working-directory: android
+
 jobs:
   lint-build-dev:
     name: Lint and Build Dev Debug
@@ -24,19 +28,17 @@ jobs:
           mkdir -p app/src/dev
           echo "$DATA" | base64 -d > app/src/dev/google-services.json
 
-      - name: Set up JDK 11
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: zulu
-          java-version: 11
+          java-version: 17
           cache: gradle
 
       - name: Run Android Lint Dev Debug
-        working-directory: android
         run: ./gradlew lintDevDebug
 
       - name: Build Dev Debug APK
-        working-directory: android
         run: ./gradlew assembleDevDebug
 
   lint-build-prod:
@@ -55,11 +57,11 @@ jobs:
           mkdir -p app/src/prod
           echo "$DATA" | base64 -d > app/src/prod/google-services.json
 
-      - name: Set up JDK 11
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: zulu
-          java-version: 11
+          java-version: 17
           cache: gradle
 
       - name: Run Android Lint Prod Debug
