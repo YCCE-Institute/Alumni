@@ -1,0 +1,31 @@
+name: Android Lint & Build on Develop PR
+
+on:
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+
+      - name: Restore google‑services.json
+        env:
+          DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          echo "$DATA" | base64 -d > app/google-services.json
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: zulu
+          java-version: 11
+          cache: gradle
+
+      - name: Run Lint
+        run: ./gradlew lint
+
+      - name: Build Debug Variants
+        run: ./gradlew assembleDevDebug assembleProdDebug
