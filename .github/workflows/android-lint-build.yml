@@ -38,8 +38,19 @@ jobs:
       - name: Run Android Lint Dev Debug
         run: ./gradlew lintDevDebug
 
+      - name: Run Android Lint Dev Release
+        run: ./gradlew lintDevRelease
+
       - name: Build Dev Debug APK
         run: ./gradlew assembleDevDebug
+
+      - name: Build devRelease AAB
+        env:
+          KEYSTORE_PATH: ${{ github.workspace }}/release.jks
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS_DEV: ${{ secrets.KEY_ALIAS_DEV }}
+          KEY_PASSWORD_DEV: ${{ secrets.KEY_PASSWORD_DEV }}
+        run: ./gradlew bundleDevRelease
 
   lint-build-prod:
     name: Lint and Build Prod Debug
@@ -67,5 +78,16 @@ jobs:
       - name: Run Android Lint Prod Debug
         run: ./gradlew lintProdDebug
 
+      - name: Run Android Lint Prod Release
+        run: ./gradlew lintProdRelease
+
       - name: Build Prod Debug APK
         run: ./gradlew assembleProdDebug
+
+      - name: Build prodRelease AAB
+        env:
+          KEYSTORE_PATH: ${{ github.workspace }}/release.jks
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS_PROD: ${{ secrets.KEY_ALIAS_PROD }}
+          KEY_PASSWORD_PROD: ${{ secrets.KEY_PASSWORD_PROD }}
+        run: ./gradlew bundleProdRelease
