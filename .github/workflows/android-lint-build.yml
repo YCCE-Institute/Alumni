@@ -17,9 +17,6 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Make Gradle wrapper executable
-        run: chmod +x ./gradlew
-
       - name: Restore google-services.json (dev)
         env:
           DATA: ${{ secrets.GOOGLE_SERVICES_JSON_DEV }}
@@ -35,9 +32,11 @@ jobs:
           cache: gradle
 
       - name: Run Android Lint Dev Debug
+        working-directory: android
         run: ./gradlew lintDevDebug
 
       - name: Build Dev Debug APK
+        working-directory: android
         run: ./gradlew assembleDevDebug
 
   lint-build-prod:
@@ -48,9 +47,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-
-      - name: Make Gradle wrapper executable
-        run: chmod +x ./gradlew
 
       - name: Restore google-services.json (prod)
         env:
