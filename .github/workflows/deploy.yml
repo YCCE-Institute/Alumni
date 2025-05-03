@@ -17,7 +17,7 @@ jobs:
       - name: Restore google‑services.json (dev)
         env:
           DATA: ${{ secrets.GOOGLE_SERVICES_JSON_DEV }}
-        run: echo "$DATA" | base64 -d > app/google-services.json
+        run: echo "$DATA" | base64 -d > app/src/dev/google-services.json
 
       - name: Restore Keystore
         run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > release.jks
@@ -75,7 +75,7 @@ jobs:
       - name: Restore google‑services.json (prod)
         env:
           DATA: ${{ secrets.GOOGLE_SERVICES_JSON_PROD }}
-        run: echo "$DATA" | base64 -d > app/google-services.json
+        run: echo "$DATA" | base64 -d > app/src/prod/google-services.json
 
       - name: Restore Keystore
         run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > release.jks
