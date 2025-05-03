@@ -1,0 +1,14 @@
+name: repro‑on‑error
+
+on:
+  pull_request:
+    branches:
+      - develop
+    paths:
+      - 'android/**'
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello"
