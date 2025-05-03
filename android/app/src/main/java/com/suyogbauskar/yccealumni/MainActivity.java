@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         city.put("country", "USA");
         city.put("name", "Prod release");
         city.put("state", "CA");
-        city.put("test", "test 8");
+        city.put("test", "test 9");
 
         FirebaseFirestore.getInstance().collection("cities").document("LA")
                 .set(city)
