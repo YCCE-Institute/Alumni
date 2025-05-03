@@ -36,11 +36,9 @@ jobs:
           cache: gradle
 
       - name: Run Android Lint Dev Debug
-        working-directory: android
         run: ./gradlew lintDevDebug
 
       - name: Build Dev Debug APK
-        working-directory: android
         run: ./gradlew assembleDevDebug
 
   lint-build-prod:
