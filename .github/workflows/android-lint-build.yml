@@ -3,7 +3,7 @@ name: Android Lint & Build on Develop PR
 on:
   pull_request:
     branches: [ develop ]
-  paths:
+    paths:
       - 'android/**'
       - 'app/**'
 
