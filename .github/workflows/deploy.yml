@@ -74,7 +74,7 @@ jobs:
           packageName: com.suyogbauskar.yccealumni.dev
           releaseFiles: android/app/build/outputs/bundle/devRelease/app-dev-release.aab
           track: internal
-          whatsNewDirectory: whatsNew/dev
+          whatsNewDirectory: android/whatsNew/dev
 
   production:
     if: github.ref == 'refs/heads/main'
@@ -137,4 +137,4 @@ jobs:
           packageName: com.suyogbauskar.yccealumni
           releaseFiles: android/app/build/outputs/bundle/prodRelease/app-prod-release.aab
           track: internal
-          whatsNewDirectory: whatsNew/prod
+          whatsNewDirectory: android/whatsNew/prod
