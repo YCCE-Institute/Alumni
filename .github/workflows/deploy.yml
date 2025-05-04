@@ -74,6 +74,7 @@ jobs:
           packageName: com.suyogbauskar.yccealumni.dev
           releaseFiles: android/app/build/outputs/bundle/devRelease/app-dev-release.aab
           track: internal
+          status: draft
           whatsNewDirectory: android/whatsNew/dev
 
   production:
@@ -137,4 +138,5 @@ jobs:
           packageName: com.suyogbauskar.yccealumni
           releaseFiles: android/app/build/outputs/bundle/prodRelease/app-prod-release.aab
           track: internal
+          status: draft
           whatsNewDirectory: android/whatsNew/prod
