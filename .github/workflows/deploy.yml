@@ -72,7 +72,7 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON_DEV }}
           packageName: com.suyogbauskar.yccealumni.dev
-          releaseFiles: app/build/outputs/bundle/devRelease/app-dev-release.aab
+          releaseFiles: android/app/build/outputs/bundle/devRelease/app-dev-release.aab
           track: internal
           whatsNewDirectory: whatsNew/dev
 
@@ -135,6 +135,6 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON_PROD }}
           packageName: com.suyogbauskar.yccealumni
-          releaseFiles: app/build/outputs/bundle/prodRelease/app-prod-release.aab
+          releaseFiles: android/app/build/outputs/bundle/prodRelease/app-prod-release.aab
           track: internal
           whatsNewDirectory: whatsNew/prod
