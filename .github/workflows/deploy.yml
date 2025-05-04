@@ -55,7 +55,7 @@ jobs:
       - name: Add versionCode & versionName
         uses: chkfung/android-version-actions@v1.2.3
         with:
-          gradlePath: ./app/build.gradle.kts
+          gradlePath: android/app/build.gradle.kts
           versionCode: ${{ env.adjusted_run_code }}
           versionName: ${{ env.VERSION_NAME }}
 
@@ -82,8 +82,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Checkout code
+      - name: Checkout code (with submodules)
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Restore google‑services.json (prod)
         env:
@@ -116,7 +118,7 @@ jobs:
       - name: Add versionCode & versionName
         uses: chkfung/android-version-actions@v1.2.3
         with:
-          gradlePath: app/build.gradle.kts
+          gradlePath: android/app/build.gradle.kts
           versionCode: ${{ env.adjusted_run_code }}
           versionName: ${{ env.VERSION_NAME }}
 
