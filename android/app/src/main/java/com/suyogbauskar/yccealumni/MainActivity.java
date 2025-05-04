@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         Map<String, Object> city = new HashMap<>();
         city.put("country", "USA");
-        city.put("name", "Test deploy 5");
+        city.put("name", "Test deploy 6");
         city.put("state", "CA");
 
         FirebaseFirestore.getInstance().collection("cities").document("LA")
